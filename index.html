@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4f46e5" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Como treinar um Dragão</title>
+
+  <!-- 🔥 IMPORTANTE -->
+  <script src="app.js" defer></script>
+</head>
+
+<body class="bg-light">
+  <div class="container py-4">
+
+    <header class="text-center mb-4">
+      <h1 class="mb-2">Como treinar um Dragão</h1>
+      <p class="text-muted">
+        Registre instruções de como treinar determinado Dragão
+      </p>
+    </header>
+
+    <section class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 id="form-title" class="h4 mb-3">Novo registro</h2>
+
+        <form id="entry-form">
+          <input type="hidden" id="entry-id" />
+
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" id="nome" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <input type="text" id="tipo" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Instrução</label>
+            <textarea id="instrucao" class="form-control" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Data de Nascimento</label>
+            <input type="date" id="dataNascimento" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Tamanho (metros)</label>
+            <input type="number" step="0.1" id="metros" class="form-control" required />
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="button" id="cancel-edit" class="btn btn-secondary hidden">
+              Cancelar edição
+            </button>
+          </div>
+        </form>
+
+        <p id="message" class="mt-3"></p>
+      </div>
+    </section>
+
+    <section class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between mb-3">
+          <h2 class="h4">Registros</h2>
+          <button id="reload-btn" class="btn btn-outline-secondary">
+            Atualizar
+          </button>
+        </div>
+
+        <div id="entries-list"></div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
